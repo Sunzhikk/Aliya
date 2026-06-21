@@ -2071,7 +2071,7 @@ body {
 .feature-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .press-grid { grid-template-columns: 1fr 1fr; }
 .timeline-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.media-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.media-grid { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
 .landing-card,
 .feature-card,
 .media-card {
@@ -2174,6 +2174,84 @@ body {
   margin-bottom: 4px;
   color: #12372F;
   font-size: 13.5px;
+}
+.award-spotlight {
+  margin-top: 16px;
+  padding: 18px;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255,112,101,.16), transparent 32%),
+    linear-gradient(135deg, #10251F 0%, #163F35 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.award-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(180deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: .35;
+}
+.award-spotlight > * { position: relative; z-index: 1; }
+.award-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.16);
+  color: #FFE3DD;
+  font-size: 11.5px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.award-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FF7065;
+  box-shadow: 0 0 0 6px rgba(255,112,101,.14);
+}
+.award-spotlight h3 {
+  margin-top: 16px;
+  color: #fff;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.12;
+}
+.award-spotlight p {
+  margin-top: 12px;
+  color: rgba(255,255,255,.78);
+  line-height: 1.65;
+  font-size: 14.5px;
+}
+.award-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+.award-metric {
+  padding: 13px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.award-metric strong {
+  display: block;
+  color: #fff;
+  font-size: 20px;
+}
+.award-metric span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(255,255,255,.66);
+  font-size: 11.5px;
+  font-weight: 750;
 }
 .feature-icon {
   width: 38px;
@@ -2694,7 +2772,8 @@ body {
   .audience-grid,
   .roadmap,
   .form-grid,
-  .achievement-gallery { grid-template-columns: 1fr; }
+  .achievement-gallery,
+  .award-metrics { grid-template-columns: 1fr; }
   .form-field.full { grid-column: auto; }
   .mission-panel { padding: 24px; }
   .mission-stat strong { font-size: 38px; }
@@ -3078,6 +3157,57 @@ body {
           <p class="card-copy"><a href="https://www.instagram.com/p/DJrGJONoODF/?img_index=1" target="_blank" rel="noopener">Открыть пост Technovation 2025</a></p>
         </div>
         <div class="landing-card">
+          <div class="card-title">Female Founders</div>
+          <p class="card-copy">Qushaq выиграл главную награду «Female Founders» от Women in Tech среди 200 команд и участников из 6 стран. Эта победа стала ещё одним подтверждением силы идеи и социальной значимости проекта.</p>
+          <div class="award-spotlight">
+            <div class="award-badge">главная награда</div>
+            <h3>Female Founders Winner</h3>
+            <p>Победа Qushaq в международной среде World Projects Competition и Women in Tech.</p>
+            <div class="award-metrics">
+              <div class="award-metric">
+                <strong>200</strong>
+                <span>команд</span>
+              </div>
+              <div class="award-metric">
+                <strong>6</strong>
+                <span>стран</span>
+              </div>
+              <div class="award-metric">
+                <strong>200K</strong>
+                <span>приз</span>
+              </div>
+            </div>
+          </div>
+          <div class="achievement-gallery">
+            <div class="achievement-photo document">
+              <img src="assets/female-founders-certificate.jpeg" alt="Сертификат Female Founders Winner">
+              <div class="achievement-caption"><strong>Female Founders</strong>Главная награда Women in Tech</div>
+            </div>
+            <div class="achievement-photo">
+              <img src="assets/female-founders-team.jpeg" alt="Команда Qushaq на World Projects Competition">
+              <div class="achievement-caption"><strong>World Projects Competition</strong>Команда после вручения награды</div>
+            </div>
+            <div class="achievement-photo portrait">
+              <img src="assets/female-founders-aliya.jpeg" alt="Алия с наградой Female Founders">
+              <div class="achievement-caption"><strong>Алия</strong>Награда Female Founders Winner</div>
+            </div>
+          </div>
+        </div>
+        <div class="landing-card">
+          <div class="card-title">Anamed Hackathon</div>
+          <p class="card-copy">Qushaq также принял участие в Anamed Hackathon в Asfendiyarov University. Команда представила решение для поддержки родителей детей с инвалидностью и прошла Business Incubation Program в университете.</p>
+          <div class="achievement-gallery">
+            <div class="achievement-photo document">
+              <img src="assets/asfendiyarov-certificate.jpeg" alt="Сертификат Asfendiyarov University Business Incubation Program">
+              <div class="achievement-caption"><strong>Asfendiyarov University</strong>Business Incubation Program, 2026</div>
+            </div>
+            <div class="achievement-photo portrait">
+              <img src="assets/asfendiyarov-pitch.jpeg" alt="Презентация Qushaq в Asfendiyarov University">
+              <div class="achievement-caption"><strong>Anamed Hackathon</strong>Презентация решения Qushaq</div>
+            </div>
+          </div>
+        </div>
+        <div class="landing-card">
           <div class="card-title">Планы развития</div>
           <p class="card-copy">Главные задачи сейчас — техническое развитие продукта, привлечение пользователей и доверие. Алия планирует масштабировать Qushaq и сделать его полезным для большого количества семей.</p>
         </div>
@@ -3103,8 +3233,12 @@ body {
           <div class="media-source">Достижение команды Qushaq</div>
         </div>
         <div class="media-card">
-          <div class="media-card-title">Новые награды, интервью и публикации</div>
-          <div class="media-source">Место для следующих подтверждённых материалов</div>
+          <div class="media-card-title">Qushaq выиграл главную награду Female Founders среди 200 команд и 6 стран</div>
+          <div class="media-source">Women in Tech · World Projects Competition</div>
+        </div>
+        <div class="media-card">
+          <div class="media-card-title">Участие Qushaq в Anamed Hackathon в Asfendiyarov University</div>
+          <div class="media-source">Asfendiyarov University · Business Incubation Program</div>
         </div>
       </div>
       <p class="source-note">Раздел будет пополняться новыми материалами, интервью и наградами Qushaq.</p>
@@ -5611,6 +5745,9 @@ function hideArticleLoader() {
 }
 window.addEventListener('DOMContentLoaded', () => {
   const revealItems = document.querySelectorAll('[data-reveal]');
+  if (window.location.hash) {
+    revealItems.forEach(item => item.classList.add('revealed'));
+  }
   if (!('IntersectionObserver' in window)) {
     revealItems.forEach(item => item.classList.add('revealed'));
   } else {
