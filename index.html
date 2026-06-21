@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ─── TOKENS ─── */
 :root {
   --teal:      #1F9070;
   --teal-2:    #2DAF88;
@@ -36,24 +35,23 @@
   --sh-sm: 0 1px 3px rgba(15,23,42,.06), 0 1px 2px rgba(15,23,42,.04);
   --sh-md: 0 4px 12px rgba(15,23,42,.08), 0 2px 4px rgba(15,23,42,.04);
   --f: 'Inter', -apple-system, sans-serif;
-  /* ── Episode category color tokens ── */
-  /* СЕНСОРНОЕ (sound + light) */
+
   --cat-сенс:        #6D4FCF;
   --cat-сенс-bg:     #F3EEFF;
   --cat-сенс-border: #D0BCFD;
-  /* СРЕДА (people + environment) */
+
   --cat-среда:        #C2762A;
   --cat-среда-bg:     #FFF4E5;
   --cat-среда-border: #F8CDAA;
-  /* ПЕРЕХОД (transitions) */
+
   --cat-переход:        #2B8CC4;
   --cat-переход-bg:     #EAF5FF;
   --cat-переход-border: #A8D8F5;
-  /* СОСТОЯНИЕ (fatigue/sleep) */
+
   --cat-сост:        #64748B;
   --cat-сост-bg:     #F1F5F9;
   --cat-сост-border: #CBD5E1;
-  /* НЕ ОПРЕДЕЛЕНО (fallback) */
+
   --cat-none:        #94A3B8;
   --cat-none-bg:     #F8FAFC;
   --cat-none-border: #E2E8F0;
@@ -77,7 +75,7 @@ body {
   gap: 14px;
 }
 
-/* ─── DEMO NAV ─── */
+
 .demo-nav {
   display: flex; gap: 3px;
   background: rgba(255,255,255,.95); backdrop-filter: blur(12px);
@@ -93,7 +91,7 @@ body {
 .demo-nav button.on { background: var(--teal); color: #fff; box-shadow: 0 2px 8px rgba(31,144,112,.3); }
 .demo-nav button:hover:not(.on) { background: var(--teal-bg); color: var(--teal); }
 
-/* ─── PHONE SHELL ─── */
+
 .phone {
   width: 375px;
   height: 812px;
@@ -107,7 +105,7 @@ body {
 }
 .notch { display: none; }
 
-/* ─── SPLASH ─── */
+
 .splash {
   position: absolute; inset: 0; z-index: 300;
   background: linear-gradient(160deg, #0D6450 0%, #1F9070 55%, #2DAF88 100%);
@@ -137,7 +135,7 @@ body {
 }
 .edit-child-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-bg); }
 
-/* ─── ONBOARDING SCREEN ─── */
+
 .onboard {
   position: absolute; inset: 0; z-index: 250;
   background: #fff; display: none; flex-direction: column;
@@ -196,11 +194,11 @@ body {
 }
 .ob-btn:hover { background: var(--teal-2); }
 
-/* ─── SCREENS ─── */
+
 .screen { display: none; flex-direction: column; flex: 1; overflow: hidden; padding-top: 0; }
 .screen.active { display: flex; }
 
-/* ─── STATUS BAR ─── */
+
 .sbar {
   height: 18px; padding: 0 18px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: space-between;
@@ -209,7 +207,7 @@ body {
 .sbar-icons { display: flex; gap: 5px; align-items: center; }
 .sbar-icons svg { width: 14px; height: 14px; }
 
-/* ─── BOTTOM NAV ─── */
+
 .nav {
   display: flex; justify-content: space-around;
   padding: 8px 0 16px; border-top: 1px solid var(--line);
@@ -229,7 +227,7 @@ body {
 .ni-pip { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); display: none; }
 .ni.on .ni-pip { display: block; }
 
-/* ─── SHARED ─── */
+
 .scroll-y { flex: 1; overflow-y: auto; }
 .scroll-y::-webkit-scrollbar { display: none; }
 .sec-label {
@@ -243,9 +241,7 @@ body {
 .screen-hdr h2 { font-size: 18px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
 .screen-hdr p  { font-size: 12.5px; font-weight: 500; color: var(--ink-3); margin-top: 3px; }
 
-/* ══════════════════════════════════════════
-   CRISIS OVERLAY
-══════════════════════════════════════════ */
+
 .crisis-overlay {
   position: absolute; inset: 0; z-index: 200; background: #FFF9F9;
   display: none; flex-direction: column; padding-top: 32px;
@@ -298,15 +294,13 @@ body {
 }
 .crisis-gotit-btn:hover { background: #B91C1C; }
 
-/* ══════════════════════════════════════════
-   SCREEN: HOME — REDESIGNED
-══════════════════════════════════════════ */
+
 .home-body {
   flex: 1; overflow-y: auto; padding: 0; display: flex; flex-direction: column; background: var(--bg);
 }
 .home-body::-webkit-scrollbar { display: none; }
 
-/* ── Top bar ── */
+
 .home-topbar {
   display: flex; align-items: center; gap: 10px;
   padding: 12px 20px 10px; background: var(--surface); flex-shrink: 0;
@@ -351,7 +345,7 @@ body {
   margin-left: 2px; white-space: nowrap; flex-shrink: 0;
 }
 
-/* ── Home child card (kept for applyChildData compat) ── */
+
 .home-child-card {
   margin: 14px 18px 0;
   background: var(--surface); border: 1px solid var(--line);
@@ -368,7 +362,7 @@ body {
 .home-child-sub  { font-size: 12px; font-weight: 500; color: var(--ink-3); margin-top: 2px; }
 .home-child-change { font-size: 11.5px; font-weight: 600; color: var(--teal); cursor: pointer; flex-shrink: 0; }
 
-/* ── Main heading ── */
+
 .home-heading-wrap {
   padding: 24px 20px 6px;
 }
@@ -379,13 +373,13 @@ body {
   font-size: 13.5px; font-weight: 500; color: var(--ink-3); margin-top: 5px; line-height: 1.5;
 }
 
-/* ── PRIMARY ACTIONS ── */
+
 .home-primary-wrap {
   padding: 18px 18px 0;
   display: flex; flex-direction: column; gap: 12px;
 }
 
-/* Crisis button — large, dominant */
+
 .home-crisis-btn {
   background: linear-gradient(145deg, #DC2626 0%, #B91C1C 100%);
   border-radius: 20px; padding: 22px 20px;
@@ -421,7 +415,7 @@ body {
 }
 .home-crisis-arrow svg { width: 18px; height: 18px; stroke: #fff; }
 
-/* Chat button — strong primary */
+
 .home-chat-btn {
   background: linear-gradient(145deg, #1F9070 0%, #166d55 100%);
   border: none;
@@ -445,7 +439,7 @@ body {
 .home-chat-arrow { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .home-chat-arrow svg { width: 16px; height: 16px; stroke: #fff; }
 
-/* ── Last episode block ── */
+
 .home-last-ep {
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--r-lg); padding: 14px 16px;
@@ -474,7 +468,7 @@ body {
 .home-last-ep-btn:hover { background: #B6E0D3; }
 .home-last-ep-btn:active { transform: scale(.98); }
 
-/* ── Divider ── */
+
 .home-divider {
   margin: 26px 20px 0;
   display: flex; align-items: center; gap: 12px;
@@ -482,7 +476,7 @@ body {
 .home-divider-line { flex: 1; height: 1px; background: var(--line); }
 .home-divider-label { font-size: 11px; font-weight: 700; color: var(--ink-4); letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
 
-/* ── Secondary actions (compact) ── */
+
 .home-secondary-wrap {
   padding: 14px 18px 30px;
   display: flex; flex-direction: column; gap: 8px;
@@ -505,7 +499,7 @@ body {
 .home-sec-sub   { font-size: 11.5px; font-weight: 500; color: var(--ink-3); }
 .home-sec-arrow svg { width: 15px; height: 15px; stroke: var(--ink-4); flex-shrink: 0; }
 
-/* ── Observation card ── */
+
 .home-observe-card {
   margin: 12px 18px 0;
   background: #F8F5FF;
@@ -545,9 +539,7 @@ body {
 .home-observe-btn:hover { background: rgba(124,58,237,.12); border-color: rgba(124,58,237,.28); }
 .home-observe-btn:active { transform: scale(.98); }
 
-/* ══════════════════════════════════════════
-   SCREEN: CHAT — COMPACT ONE-SCREEN VERSION
-══════════════════════════════════════════ */
+
 .chat-sticky { flex-shrink: 0; background: var(--surface); }
 .chat-header {
   display: flex; align-items: center; justify-content: space-between;
@@ -582,11 +574,11 @@ body {
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-/* Messages area — scrollable flex column */
+
 .msgs-scroll { flex: 1; overflow-y: auto; display: flex; flex-direction: column; min-height: 0; }
 .msgs-scroll::-webkit-scrollbar { display: none; }
 
-/* ── Messages container ── */
+
 .msgs {
   padding: 10px 12px 6px;
   display: flex;
@@ -601,14 +593,14 @@ body {
   padding: 3px 10px; border-radius: 20px; margin: 0 0 8px;
 }
 
-/* Chat row */
+
 .msg-row {
   display: flex; flex-direction: row; align-items: flex-end;
   gap: 7px; margin-bottom: 3px;
   align-self: flex-start; max-width: 80%;
   margin-right: auto; margin-left: 0;
 }
-/* User row */
+
 .msg-row.user {
   flex-direction: row-reverse; align-self: flex-end;
   max-width: 80%; margin-left: auto; margin-right: 0;
@@ -663,7 +655,7 @@ body {
 .msg-meta-time  { font-size: 10px; font-weight: 600; color: var(--ink-4); }
 .msg-meta-check { font-size: 11px; color: var(--teal-2); }
 
-/* ── Detect card — compact ── */
+
 .detect-card {
   align-self: flex-start;
   margin: 2px 0 6px 31px;
@@ -680,7 +672,7 @@ body {
 .detect-label { font-size: 9.5px; font-weight: 700; color: var(--purple); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 1px; }
 .detect-value { font-size: 11.5px; font-weight: 700; color: #3B0764; }
 
-/* ── Response card — compact ── */
+
 .response-card {
   align-self: flex-start;
   margin: 2px 0 6px 31px;
@@ -717,7 +709,7 @@ body {
 .icon-purple { background: var(--purple-bg); }
 .icon-purple svg { stroke: var(--purple); }
 
-/* ── Identity banner — compact ── */
+
 .intro-banner {
   margin: 10px 12px 4px;
   background: var(--bg); border: 1px solid var(--line);
@@ -739,7 +731,7 @@ body {
 .intro-name { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
 .intro-desc { font-size: 11px; font-weight: 500; color: var(--ink-3); line-height: 1.4; }
 
-/* ── Crisis calm note ── */
+
 .crisis-calm-note {
   background: #FFF7ED; border: 1.5px solid #FCD34D;
   border-radius: var(--r-md); padding: 11px 14px; margin-bottom: 16px;
@@ -747,7 +739,7 @@ body {
 }
 .crisis-hdr-sub { font-size: 12px; font-weight: 500; color: rgba(255,255,255,.8); margin-top: 3px; }
 
-/* ── Action row — compact ── */
+
 .action-row {
   align-self: flex-start;
   display: flex; align-items: center; gap: 6px;
@@ -774,7 +766,7 @@ body {
 .save-btn.saved { color: var(--amber); }
 .save-btn.saved svg { stroke: var(--amber-2); fill: var(--amber-2); }
 
-/* ── Streaming cursor ── */
+
 .stream-cursor {
   display: inline-block;
   animation: blink .7s step-end infinite;
@@ -814,7 +806,7 @@ body {
   font-size: 12px; font-weight: 500; color: var(--ink-3); line-height: 1.45;
 }
 
-/* ── Chips — compact single row ── */
+
 .chips-bar {
   display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto;
   padding: 4px 0 6px; background: transparent;
@@ -829,7 +821,7 @@ body {
 }
 .chip:active, .chip:hover { background: var(--teal-bg); border-color: #A7E9D2; color: var(--teal); }
 
-/* ── Input bar ── */
+
 .input-bar {
   display: flex; flex-direction: column;
   padding: 6px 12px 16px; background: var(--surface);
@@ -861,7 +853,7 @@ body {
 .send-btn:active { transform: scale(.95); }
 .send-btn svg { width: 14px; height: 14px; }
 
-/* ── followup bubble (kept for dynamic use only) ── */
+
 .followup-bubble {
   align-self: flex-start; margin: 0 0 8px 31px;
   background: var(--line-2); border: 1px solid var(--line);
@@ -870,9 +862,7 @@ body {
   animation: bpop .2s .18s both; max-width: calc(100% - 43px);
 }
 
-/* ══════════════════════════════════════════
-   SCREEN: INSIGHTS
-══════════════════════════════════════════ */
+
 .pattern-card {
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--r-xl); padding: 15px 16px; margin-bottom: 11px; box-shadow: var(--sh-sm);
@@ -890,19 +880,19 @@ body {
 .ep-bar-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
 .ep-bar-outer { width: 100%; border-radius: 4px 4px 0 0; background: var(--line); height: 50px; display: flex; align-items: flex-end; }
 .ep-bar-fill { width: 100%; border-radius: 4px 4px 0 0; transition: height .5s ease; }
-/* Category-typed bar colors */
+
 .ep-bar-fill.cat-сенс     { background: var(--cat-сенс); }
 .ep-bar-fill.cat-среда    { background: var(--cat-среда); }
 .ep-bar-fill.cat-переход  { background: var(--cat-переход); }
 .ep-bar-fill.cat-сост     { background: var(--cat-сост); }
 .ep-bar-fill.cat-none     { background: var(--cat-none); }
-/* Legacy aliases for static bars */
+
 .ep-bar-fill.hi  { background: var(--cat-сенс); }
 .ep-bar-fill.lo  { background: var(--cat-none); }
 .ep-bar-fill.med { background: var(--cat-среда); }
 .ep-bar-date { font-size: 9.5px; font-weight: 600; color: var(--ink-4); white-space: nowrap; }
 
-/* ── Chart legend ── */
+
 .ep-legend {
   display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
 }
@@ -933,13 +923,13 @@ body {
 .ep-date-month { font-size: 10.5px; font-weight: 600; color: var(--ink-3); text-transform: uppercase; }
 .ep-dot-line { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; margin-top: 3px; }
 .ep-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-/* Category-typed dot colors */
+
 .ep-dot.cat-сенс     { background: var(--cat-сенс); }
 .ep-dot.cat-среда    { background: var(--cat-среда); }
 .ep-dot.cat-переход  { background: var(--cat-переход); }
 .ep-dot.cat-сост     { background: var(--cat-сост); }
 .ep-dot.cat-none     { background: var(--cat-none); }
-/* Legacy kept for static episodes */
+
 .ep-dot.red   { background: var(--cat-сенс); }
 .ep-dot.amber { background: var(--cat-переход); }
 .ep-line { width: 1.5px; flex: 1; background: var(--line); margin-top: 3px; min-height: 24px; }
@@ -952,7 +942,7 @@ body {
   border-radius: 20px; border: 1px solid var(--cat-none-border);
 }
 .ep-trigger svg { width: 11px; height: 11px; stroke: var(--cat-none); }
-/* Category-typed tag classes */
+
 .ep-trigger.cat-сенс     { background: var(--cat-сенс-bg);    color: var(--cat-сенс);    border-color: var(--cat-сенс-border); }
 .ep-trigger.cat-сенс svg { stroke: var(--cat-сенс); }
 .ep-trigger.cat-среда    { background: var(--cat-среда-bg);   color: var(--cat-среда);   border-color: var(--cat-среда-border); }
@@ -963,13 +953,11 @@ body {
 .ep-trigger.cat-сост svg { stroke: var(--cat-сост); }
 .ep-trigger.cat-none     { background: var(--cat-none-bg);    color: var(--cat-none);    border-color: var(--cat-none-border); }
 .ep-trigger.cat-none svg { stroke: var(--cat-none); }
-/* Legacy alias for static episodes */
+
 .ep-trigger.amber { background: var(--cat-переход-bg); color: var(--cat-переход); border-color: var(--cat-переход-border); }
 .ep-trigger.amber svg { stroke: var(--cat-переход); }
 
-/* ══════════════════════════════════════════
-   SCREEN: WORK
-══════════════════════════════════════════ */
+
 .work-screen {
   flex: 1;
   overflow-y: auto;
@@ -1283,9 +1271,7 @@ body {
 }
 .work-detail-claim svg { width: 18px; height: 18px; stroke: currentColor; }
 
-/* ══════════════════════════════════════════
-   SCREEN: LEARN
-══════════════════════════════════════════ */
+
 .learn-card {
   display: flex; gap: 13px; align-items: flex-start;
   background: var(--surface); border: 1px solid var(--line);
@@ -1321,7 +1307,7 @@ body {
 .learn-card-linked:hover .learn-arrow svg { stroke: var(--teal); }
 .learn-card-linked:hover { border-color: var(--teal-2); }
 
-/* ─── IN-APP ARTICLE VIEWER ─── */
+
 .article-overlay {
   position: absolute; inset: 0; z-index: 400;
   background: #fff; display: none; flex-direction: column;
@@ -1365,9 +1351,7 @@ body {
 }
 .article-iframe.loaded { display: block; }
 
-/* ══════════════════════════════════════════
-   SCREEN: PROFILE
-══════════════════════════════════════════ */
+
 .profile-hero { padding: 22px 18px 18px; text-align: center; background: var(--surface); border-bottom: 1px solid var(--line); flex-shrink: 0; }
 .child-avatar {
   width: 68px; height: 68px; border-radius: 50%;
@@ -1451,9 +1435,7 @@ body {
 .tn-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber-2); }
 .tn-body { font-size: 13.5px; font-weight: 500; color: var(--ink); line-height: 1.65; font-style: italic; }
 
-/* ══════════════════════════════════════════
-   LOG EPISODE OVERLAY
-══════════════════════════════════════════ */
+
 .log-overlay {
   position: absolute; inset: 0; z-index: 250;
   background: var(--bg);
@@ -1494,13 +1476,13 @@ body {
   -webkit-appearance: none;
 }
 .log-input:focus { border-color: var(--teal-2); box-shadow: 0 0 0 3px rgba(45,175,136,.12); }
-/* Ensure date input matches text input height/appearance */
+
 input[type="date"].log-input { cursor: pointer; }
 input[type="date"].log-input::-webkit-calendar-picker-indicator { opacity: .5; cursor: pointer; }
 .log-input::placeholder { color: var(--ink-4); }
 textarea.log-input { line-height: 1.5; }
 
-/* Tag chips for trigger selection */
+
 .log-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .log-tag {
   padding: 5px 11px; border-radius: 20px; cursor: pointer;
@@ -1511,7 +1493,7 @@ textarea.log-input { line-height: 1.5; }
 .log-tag:hover  { background: var(--teal-bg); border-color: #A7E9D2; color: var(--teal); }
 .log-tag.active { background: var(--teal-bg); border-color: var(--teal); color: var(--teal); }
 
-/* Action buttons */
+
 .log-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
 .log-save-btn {
   width: 100%; padding: 13px; border: none; border-radius: var(--r-lg);
@@ -1530,9 +1512,7 @@ textarea.log-input { line-height: 1.5; }
 }
 .log-cancel-btn:hover { background: var(--line-2); }
 
-/* ══════════════════════════════════════════
-   SAVE TOAST
-══════════════════════════════════════════ */
+
 .save-toast {
   position: absolute; bottom: 80px; left: 14px; right: 14px; z-index: 260;
   background: var(--ink); color: #fff; border-radius: var(--r-lg);
@@ -1551,9 +1531,7 @@ textarea.log-input { line-height: 1.5; }
 .save-toast-text { flex: 1; font-size: 12.5px; font-weight: 500; line-height: 1.5; }
 .save-toast-text strong { font-weight: 700; display: block; margin-bottom: 1px; font-size: 13px; }
 
-/* ══════════════════════════════════════════
-   ANALYTICS: UPDATE BANNER + NEW EPISODE
-══════════════════════════════════════════ */
+
 .update-banner {
   display: none;
   background: var(--teal-bg); border: 1.5px solid #A7E9D2;
@@ -1570,7 +1548,7 @@ textarea.log-input { line-height: 1.5; }
 .aub-text { font-size: 12px; font-weight: 600; color: #1D4D3A; line-height: 1.4; }
 .aub-text span { font-weight: 700; color: var(--teal); }
 
-/* New episode item — subtle highlight, no aggressive color */
+
 .ep-item.ep-new {
   background: linear-gradient(90deg, rgba(79,110,245,.04) 0%, transparent 80%);
   border-left: 3px solid var(--t-шум);
@@ -1578,12 +1556,10 @@ textarea.log-input { line-height: 1.5; }
 }
 .ep-item.ep-new .ep-place { color: var(--ink); }
 
-/* Screen slide-in transition */
+
 .screen { transition: opacity .22s ease; }
 
-/* ══════════════════════════════════════════
-   AUTH SCREENS (Login + Registration)
-══════════════════════════════════════════ */
+
 .auth-screen {
   position: absolute; inset: 0; z-index: 150;
   background: var(--bg);
@@ -1676,7 +1652,7 @@ textarea.log-input { line-height: 1.5; }
 
 
 
-/* ─── NOTIFICATIONS OVERLAY ─── */
+
 .notify-overlay {
   position: absolute; inset: 0; z-index: 270;
   background: rgba(15,23,42,.28);
@@ -1714,7 +1690,7 @@ textarea.log-input { line-height: 1.5; }
   border-top: 1px solid var(--line-2);
 }
 
-/* Landing page */
+
 html { scroll-behavior: smooth; }
 body {
   color: var(--ink);
@@ -3093,7 +3069,7 @@ body {
     </div>
   </div>
 
-  <!-- AUTH: РЕГИСТРАЦИЯ -->
+
   <div class="auth-screen" id="auth-register">
     <div class="auth-topbar">
       <div class="auth-logo">
@@ -3263,7 +3239,7 @@ body {
   </div>
 
 
-  <!-- LOG EPISODE OVERLAY -->
+
   <div class="log-overlay" id="log-overlay">
     <div class="log-hdr">
       <button class="log-back-btn" onclick="closeLogEpisode()" aria-label="Назад">
@@ -3309,7 +3285,7 @@ body {
     </div>
   </div>
 
-  <!-- SAVE TOAST -->
+
   <div class="save-toast" id="save-toast">
     <div class="save-toast-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -3322,7 +3298,7 @@ body {
 
 
 
-  <!-- NOTIFICATIONS OVERLAY -->
+
   <div class="notify-overlay" id="notify-overlay" onclick="closeNotifications(event)">
     <div class="notify-card" onclick="event.stopPropagation()">
       <div class="notify-head">
@@ -3349,7 +3325,7 @@ body {
   </div>
 
 
-  <!-- ЭКРАН: ГЛАВНАЯ -->
+
   <div class="screen active" id="s-home">
     <div class="sbar">
       <span class="sbar-time">9:41</span>
@@ -3360,7 +3336,7 @@ body {
     </div>
     <div class="home-body">
 
-      <!-- Top bar with logo + notification -->
+
       <div class="home-topbar">
         <div class="home-topbar-logo">
           <div class="home-topbar-logo-icon">
@@ -3390,16 +3366,16 @@ body {
         </div>
       </div>
 
-      <!-- Main heading -->
+
       <div class="home-heading-wrap">
         <div class="home-heading">Что происходит сейчас?</div>
         <div class="home-heading-sub">Выберите подходящее действие</div>
       </div>
 
-      <!-- PRIMARY ACTIONS -->
+
       <div class="home-primary-wrap">
 
-        <!-- Crisis — dominant -->
+
         <button class="home-crisis-btn" onclick="openCrisis()">
           <div class="home-crisis-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -3427,7 +3403,7 @@ body {
 
       </div>
 
-      <!-- Наблюдение -->
+
       <div class="home-observe-card" id="home-observe-card">
         <div class="home-observe-header">
           <div class="home-observe-icon">
@@ -3439,7 +3415,7 @@ body {
         <button class="home-observe-btn" id="home-observe-btn" onclick="go('insights')" style="display:none;">Открыть анализ</button>
       </div>
 
-      <!-- ПОСЛЕДНИЙ ЭПИЗОД -->
+
       <div class="home-last-ep" id="home-last-ep" style="display:none; margin: 14px 18px 0;">
         <div class="home-last-ep-header">
           <span class="home-last-ep-title">Последний эпизод</span>
@@ -3451,12 +3427,12 @@ body {
         </button>
       </div>
 
-      <!-- Divider -->
+
       <div class="home-divider" style="margin-top:14px;">
         <div class="home-divider-line"></div>
       </div>
 
-      <!-- SECONDARY ACTIONS (compact) -->
+
       <div class="home-secondary-wrap">
 
         <div class="home-sec-btn" onclick="go('insights')">
@@ -3471,12 +3447,12 @@ body {
         </div>
 
       </div>
-      <!-- end secondary -->
 
-    </div><!-- end home-body -->
-  </div><!-- end s-home -->
 
-  <!-- ЭКРАН: ЧАТ -->
+    </div>
+  </div>
+
+
   <div class="screen" id="s-chat">
     <div class="chat-sticky">
       <div class="sbar">
@@ -3549,11 +3525,11 @@ body {
           <polygon points="22 2 15 22 11 13 2 9 22 2" fill="white" stroke="none"/>
         </svg>
       </button>
-      </div><!-- input-row -->
+      </div>
     </div>
   </div>
 
-  <!-- ЭКРАН: ДНЕВНИК -->
+
   <div class="screen" id="s-insights">
     <div class="sbar"><span class="sbar-time">9:41</span></div>
     <div class="screen-hdr"><h2 id="diary-title">Дневник Алана</h2><p>Замеченные паттерны · последние 14 дней</p></div>
@@ -3612,7 +3588,7 @@ body {
     </div>
   </div>
 
-  <!-- ЭКРАН: РАБОТА -->
+
   <div class="screen" id="s-work">
     <div class="sbar"><span class="sbar-time">9:41</span></div>
     <div class="work-screen">
@@ -3703,7 +3679,7 @@ body {
     </div>
   </div>
 
-  <!-- ЭКРАН: УЧЁБА -->
+
   <div class="screen" id="s-learn">
     <div class="sbar"><span class="sbar-time">9:41</span></div>
     <div class="screen-hdr"><h2>Советы и материалы</h2><p>Короткие гиды для родителей · проверенный подход</p></div>
@@ -3716,7 +3692,7 @@ body {
     </div>
   </div>
 
-  <!-- ЭКРАН: ПРОФИЛЬ -->
+
   <div class="screen" id="s-profile">
     <div class="sbar"><span class="sbar-time">9:41</span></div>
     <div class="scroll-y" style="padding:0">
@@ -3770,7 +3746,7 @@ body {
     </div>
   </div>
 
-  <!-- НИЖНЯЯ НАВИГАЦИЯ -->
+
   <div class="nav">
     <div class="ni on" id="ni-home" onclick="go('home')">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -3794,7 +3770,7 @@ body {
     </div>
   </div>
 
-  <!-- IN-APP ARTICLE VIEWER -->
+
   <div class="article-overlay" id="article-overlay">
     <div class="article-topbar">
       <button class="article-back-btn" onclick="closeArticle()">
@@ -3811,8 +3787,8 @@ body {
     <iframe id="article-iframe" class="article-iframe" src="" onload="hideArticleLoader()"></iframe>
   </div>
 
-</div><!-- /.phone -->
-</div><!-- /.outer -->
+</div>
+</div><
 
 <script>
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -3850,7 +3826,7 @@ function initApp() {
 
 window.addEventListener('load', initApp);
 
-/* ── Onboarding ── */
+
 
 let selectedGender = 'мальчик';
 
@@ -3909,7 +3885,7 @@ function applyChildData(data) {
   const ava  = gender === 'девочка' ? '👧' : '👦';
   const ageStr = `${age} ${ageWord(+age)}`;
 
-  // Home topbar child info
+
   setText(id('home-child-ava'), ava);
   setText(id('home-child-name'), `${name}, ${age}`);
   setText(id('home-child-sub'), diag);
@@ -3949,7 +3925,7 @@ function applyChildData(data) {
   const notifBody1 = document.getElementById('notif-body-1');
   if (notifBody1) notifBody1.textContent = `Появилась свежая запись специалиста и обновлённый паттерн по состоянию ${name}.`;
 
-  // Update system prompt
+
   updateSystemPrompt(data);
   renderRecommendedArticles(getRecommendationProfile() || extractRecommendationProfileFromChat());
 }
@@ -4322,7 +4298,7 @@ function logout() {
   showAuth('login');
 }
 
-/* ── Auth screens ── */
+
 function showAuth(which) {
   toggleClass(id('auth-login'), 'active', which === 'login');
   toggleClass(id('auth-register'), 'active', which === 'register');
@@ -4393,7 +4369,7 @@ function doRegister() {
   setCurrentUser({ id: newUser.id, email: newUser.email });
   resetRecommendationProfile();
 
-  // Keep existing prototype reset flow for fresh registration
+
   chatHistory.length = 0;
   localStorage.removeItem('qushaq_chat_history');
   localStorage.removeItem('qushaq_chat_dom');
@@ -4416,7 +4392,7 @@ function doRegister() {
 function goMain(name) {
   showAuth(null);
   go(name);
-  /* Show observation card using static baseline episodes */
+
   setTimeout(() => {
     const staticTriggers = ['Громкое объявление', 'Голоса и музыка', 'Шум и музыка', 'Переход без предупреждения'];
     const card   = document.getElementById('home-observe-card');
@@ -4424,7 +4400,7 @@ function goMain(name) {
     const btn    = document.getElementById('home-observe-btn');
     if (!card || !textEl || !btn) return;
     if (episodes.length > 0) { updateObserveCard(); return; }
-    /* Use static data to pick dominant trigger */
+
     const counts = {};
     staticTriggers.forEach(t => {
       const key = t.toLowerCase();
@@ -4450,7 +4426,7 @@ function goMain(name) {
   }, 100);
 }
 
-/* ── Navigation ── */
+
 const SCREENS = ['home','chat','insights','work','learn','profile'];
 function go(name) {
   SCREENS.forEach(s => {
@@ -4727,17 +4703,17 @@ document.addEventListener('DOMContentLoaded', () => {
 function openCrisis()  { document.getElementById('crisis-overlay').classList.add('open'); }
 function closeCrisis() { document.getElementById('crisis-overlay').classList.remove('open'); }
 
-/* ── Log Episode overlay ── */
+
 function openLogEpisode() {
   closeCrisis();
-  // Date field starts empty — user must choose manually
+
   document.getElementById('log-date').value = '';
-  // Clear previous values
+
   document.getElementById('log-place').value = '';
   document.getElementById('log-what').value = '';
   document.getElementById('log-trigger').value = '';
   document.querySelectorAll('#log-tags .log-tag').forEach(t => t.classList.remove('active'));
-  // Open overlay
+
   document.getElementById('log-overlay').classList.add('open');
 }
 
@@ -4746,19 +4722,19 @@ function closeLogEpisode() {
 }
 
 function selectTag(el, value) {
-  // Toggle tag selection
+
   document.querySelectorAll('#log-tags .log-tag').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   document.getElementById('log-trigger').value = value;
 }
 
-/* ── Episode store (in-memory array) ── */
+
 let episodes = [];
 
-/* Short Russian month names for display */
+
 const MONTHS_SHORT = ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек'];
 
-/* Parse a YYYY-MM-DD date string into {day, monthIdx} for display */
+
 function parseDateInput(val) {
   if (!val) { const n = new Date(); return {day: n.getDate(), monthIdx: n.getMonth(), iso: toIso(n)}; }
   const parts = val.split('-');
@@ -4778,33 +4754,27 @@ function saveEpisode() {
 
   const parsed = parseDateInput(dateVal);
 
-  /* Push new episode into the shared array */
-  /* Store episode with canonical field names matching renderAnalytics */
+
   episodes.push({ iso: parsed.iso, day: parsed.day, monthIdx: parsed.monthIdx, place, description: what, trigger });
   updateLastEpisodeBlock();
   updateObserveCard();
 
-  /* Close form */
+
   closeLogEpisode();
 
-  /* Show confirmation toast */
+
   const toast = document.getElementById('save-toast');
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3200);
 
-  /* Navigate to analytics after brief delay and re-render */
+
   setTimeout(() => {
     go('insights');
     renderAnalytics();
   }, 600);
 }
 
-/* ══════════════════════════════════════════════════════════
-   CATEGORY SYSTEM
-   5 categories, each maps to a CSS class, color, label, and recommendation
-   ════════════════════════════════════════════════════════ */
 
-/* PREDEFINED TRIGGER → CATEGORY mapping (from log form chips) */
 const TAG_CATEGORY = {
   'Громкий звук':          'СЕНСОРНОЕ',
   'Яркий свет':            'СЕНСОРНОЕ',
@@ -4814,7 +4784,7 @@ const TAG_CATEGORY = {
   'Усталость':             'СОСТОЯНИЕ',
 };
 
-/* KEYWORD → CATEGORY for free-text input */
+
 function classifyFreeText(text) {
   if (!text) return 'НЕ ОПРЕДЕЛЕНО';
   const t = text.toLowerCase();
@@ -4825,14 +4795,14 @@ function classifyFreeText(text) {
   return 'НЕ ОПРЕДЕЛЕНО';
 }
 
-/* Resolve episode trigger to a category — handles null, predefined tags, and free text */
+
 function resolveCategory(trigger) {
   if (!trigger || trigger.trim() === '') return 'НЕ ОПРЕДЕЛЕНО';
   if (TAG_CATEGORY[trigger]) return TAG_CATEGORY[trigger];
   return classifyFreeText(trigger);
 }
 
-/* Category → CSS class for dots, bars, tags */
+
 function catClass(cat) {
   const MAP = {
     'СЕНСОРНОЕ':    'cat-сенс',
@@ -4844,7 +4814,7 @@ function catClass(cat) {
   return MAP[cat] || 'cat-none';
 }
 
-/* Category → human-readable Russian label (short) */
+
 function catLabel(cat) {
   const LABELS = {
     'СЕНСОРНОЕ':    'Сенсорное',
@@ -4856,7 +4826,7 @@ function catLabel(cat) {
   return LABELS[cat] || 'Не определено';
 }
 
-/* Find the most frequent category across all episodes (including НЕ ОПРЕДЕЛЕНО) */
+
 function getDominantCategory() {
   const counts = {};
   episodes.forEach(ep => {
@@ -4887,14 +4857,14 @@ function updateLastEpisodeBlock() {
   if (btn) btn.style.display = 'block';
 }
 
-/* ── Observation card ── */
+
 function updateObserveCard() {
   const card    = document.getElementById('home-observe-card');
   const textEl  = document.getElementById('home-observe-text');
   const btn     = document.getElementById('home-observe-btn');
   if (!card || !textEl || !btn) return;
 
-  /* Count triggers from dynamic episodes only */
+
   const counts = {};
   episodes.forEach(ep => {
     const t = (ep.trigger || '').toLowerCase();
@@ -4904,7 +4874,7 @@ function updateObserveCard() {
 
   const keys = Object.keys(counts);
   if (!keys.length) {
-    /* No data yet — show placeholder, hide button */
+
     textEl.textContent = 'Пока недостаточно данных для наблюдений';
     textEl.classList.add('muted');
     btn.style.display = 'none';
@@ -4912,10 +4882,10 @@ function updateObserveCard() {
     return;
   }
 
-  /* Find most frequent trigger */
+
   const topTrigger = keys.reduce((a, b) => counts[a] >= counts[b] ? a : b);
 
-  /* Map trigger to observation text */
+
   let observation = '';
   if (/шум|звук|громк|объявл|музык|голос|свет|яркий/.test(topTrigger)) {
     observation = 'Замечено: сложные ситуации чаще в шумных местах';
@@ -4953,26 +4923,25 @@ function repeatLastEpisode() {
 }
 
 function renderAnalytics() {
-  /* ── 1. Show update banner ── */
+
   const banner = document.getElementById('update-banner');
   if (banner) banner.classList.add('show');
 
   const total = episodes.length;
 
-  /* ── 2. Count per category across ALL episodes ── */
+
   const counts = { 'СЕНСОРНОЕ': 0, 'СРЕДА': 0, 'ПЕРЕХОД': 0, 'СОСТОЯНИЕ': 0, 'НЕ ОПРЕДЕЛЕНО': 0 };
   episodes.forEach(ep => { counts[resolveCategory(ep.trigger)]++; });
 
-  /* Static baseline episodes (pre-loaded in HTML):
-     9 мар  → СЕНСОРНОЕ, 12 мар → СРЕДА, 9 мар (ТРЦ) → СЕНСОРНОЕ, 5 мар → ПЕРЕХОД */
+
   const BASE = { 'СЕНСОРНОЕ': 2, 'СРЕДА': 1, 'ПЕРЕХОД': 1, 'СОСТОЯНИЕ': 0, 'НЕ ОПРЕДЕЛЕНО': 0 };
-  const totalAll = total + 4; /* 4 static episodes */
+  const totalAll = total + 4; 
   Object.keys(BASE).forEach(k => counts[k] += BASE[k]);
 
-  /* ── 3. Dominant category ── */
+
   const dominant = getDominantCategory();
 
-  /* ── 4. Update pattern card title ── */
+
   const titleEl = document.getElementById('pattern-card-title');
   if (titleEl) {
     const TITLES = {
@@ -4985,7 +4954,7 @@ function renderAnalytics() {
     titleEl.textContent = TITLES[total === 0 ? 'СЕНСОРНОЕ' : dominant];
   }
 
-  /* ── 5. Update pattern body text ── */
+
   const pcb = document.getElementById('pattern-card-body');
   if (pcb) {
     if (total === 0) {
@@ -5003,7 +4972,7 @@ function renderAnalytics() {
     }
   }
 
-  /* ── 6. Update recommendation based on dominant category ── */
+
   const recEl = document.getElementById('pattern-rec-body');
   if (recEl) {
     const RECS = {
@@ -5016,12 +4985,12 @@ function renderAnalytics() {
     recEl.textContent = RECS[total === 0 ? 'СЕНСОРНОЕ' : dominant];
   }
 
-  /* ── 7. Add/update today's chart bar — height = episode count today (equal, honest) ── */
+
   const chart = document.getElementById('ep-chart');
   if (chart) {
     let todayBar = document.getElementById('ep-bar-today');
     const todayCls = 'ep-bar-fill ' + catClass(dominant);
-    /* Each episode today adds 20% height, min 20%, max 100% */
+
     const barH = Math.min(20 + total * 20, 100) + '%';
     if (!todayBar) {
       todayBar = document.createElement('div');
@@ -5036,7 +5005,7 @@ function renderAnalytics() {
         if (fill) fill.style.height = barH;
       }, 80);
     } else {
-      /* Update class (dominant may have changed) and height */
+
       const fill = document.getElementById('ep-bar-today-fill');
       if (fill) {
         fill.className = todayCls;
@@ -5045,14 +5014,14 @@ function renderAnalytics() {
     }
   }
 
-  /* ── 8. Re-render the full user-added episode list (newest first) ── */
+
   const epCard = document.getElementById('episode-card');
   if (epCard) {
     epCard.querySelectorAll('.ep-item.ep-new').forEach(el => el.remove());
     [...episodes].reverse().forEach(ep => {
       const cat    = resolveCategory(ep.trigger);
       const cls    = catClass(cat);
-      /* Show trigger label: use custom text if entered, else show category label */
+
       const trigLabel = ep.trigger ? ep.trigger : 'Не определено';
       const triggerHtml =
         '<div class="ep-trigger ' + cls + '">' +
@@ -5071,7 +5040,7 @@ function renderAnalytics() {
     });
   }
 
-  /* ── 9. Scroll insights to top ── */
+
   const insightsScroll = document.querySelector('#s-insights .scroll-y');
   if (insightsScroll) insightsScroll.scrollTop = 0;
 }
@@ -5094,7 +5063,7 @@ function copyCard(btn) {
   let cardText = '';
   let introText = '';
 
-  // Walk backwards through all siblings to find card and intro
+
   while (el) {
     if (el.classList.contains('response-card') && !cardText) {
       el.querySelectorAll('.rc-section').forEach(sec => {
@@ -5123,7 +5092,7 @@ function copyCard(btn) {
       btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Копировать`;
     }, 2000);
   }).catch(() => {
-    // Fallback for browsers that block clipboard
+
     const ta = document.createElement('textarea');
     ta.value = text;
     document.body.appendChild(ta);
@@ -5157,7 +5126,7 @@ function avHtml() {
 function time() { const d = new Date(); return d.getHours() + ':' + String(d.getMinutes()).padStart(2,'0'); }
 function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-/* ── Chat history for context ── */
+
 const chatHistory = JSON.parse(localStorage.getItem('qushaq_chat_history') || '[]');
 
 function saveChatHistory() {
@@ -5178,7 +5147,7 @@ function restoreMsgsDom() {
   }
 }
 
-// Restore on load
+
 window.addEventListener('DOMContentLoaded', () => { restoreMsgsDom(); renderRecommendedArticles(getRecommendationProfile() || extractRecommendationProfileFromChat()); });
 let CHILD_CONTEXT = '';
 
@@ -5239,7 +5208,7 @@ function getSystemPrompt() {
   return CHILD_CONTEXT ? SYSTEM_PROMPT_BASE + '\n\n' + CHILD_CONTEXT : SYSTEM_PROMPT_BASE;
 }
 
-/* ── Legacy RESP (fallback) ── */
+
 const RESP = {
   default: {
     detect: 'Анализирую ситуацию',
@@ -5348,7 +5317,7 @@ const RESP = {
   }
 };
 
-/* ── Send ── */
+
 function renderResponse(r, box, wrap, elapsed) {
   const iconMap = {
     purple: '<circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>',
@@ -5440,7 +5409,7 @@ async function send() {
   inp.disabled = true;
   document.querySelector('.send-btn').disabled = true;
 
-  // User message
+
   const uRow = document.createElement('div');
   uRow.className = 'msg-row user';
   uRow.innerHTML = `<div class="bubble user">${esc(txt)}</div>`;
@@ -5451,7 +5420,7 @@ async function send() {
   box.appendChild(uMeta);
   wrap.scrollTop = 99999;
 
-  // Streaming status bubble
+
   const streamRow = document.createElement('div');
   streamRow.className = 'msg-row';
   streamRow.innerHTML = avHtml() + `<div class="bubble assistant stream-bubble"><span class="stream-label">${STREAMING_LABELS[0]}</span><span class="stream-cursor">▋</span></div>`;
@@ -5461,7 +5430,7 @@ async function send() {
   const streamBubble = streamRow.querySelector('.stream-bubble');
   const streamLabel = streamRow.querySelector('.stream-label');
 
-  // Cycle through status labels while waiting
+
   let labelIdx = 0;
   const labelTimer = setInterval(() => {
     labelIdx = (labelIdx + 1) % STREAMING_LABELS.length;
@@ -5497,7 +5466,7 @@ async function send() {
       }
     });
 
-    // Try models with streaming
+
     let fullText = '';
     let success = false;
     let lastError = '';
@@ -5537,7 +5506,7 @@ async function send() {
               const chunkText = chunk.candidates?.[0]?.content?.parts?.[0]?.text || '';
               fullText += chunkText;
 
-              // Show live character count so user sees progress
+
               const chars = fullText.length;
               if (streamLabel) streamLabel.textContent = chars < 200 ? STREAMING_LABELS[0] : chars < 600 ? STREAMING_LABELS[1] : chars < 1200 ? STREAMING_LABELS[2] : STREAMING_LABELS[3];
               wrap.scrollTop = 99999;
@@ -5556,7 +5525,7 @@ async function send() {
 
     clearInterval(labelTimer);
 
-    // Parse JSON robustly
+
     let clean = fullText.replace(/```json|```/g, '').trim();
     let r;
     try {
@@ -5579,7 +5548,7 @@ async function send() {
     saveChatHistory();
     updateRecommendationProfileFromChat();
 
-    // Smooth fade out stream bubble, then render
+
     streamRow.style.transition = 'opacity 0.2s';
     streamRow.style.opacity = '0';
     setTimeout(() => {
@@ -5599,7 +5568,7 @@ async function send() {
     box.appendChild(errRow);
     wrap.scrollTop = 99999;
 
-    // Fallback to keyword response
+
     const lc = txt.toLowerCase();
     let key = 'default';
     if (lc.match(/сенсор|перегруз|истерик|наушник|шум|крик|громк|звук|свет|кричит/)) key = 'sensory';
@@ -5627,7 +5596,7 @@ async function send() {
     inp.focus();
   }
 }
-/* ── In-app Article Viewer ── */
+
 function openArticle(url, title) {
   const overlay = document.getElementById('article-overlay');
   const iframe  = document.getElementById('article-iframe');
