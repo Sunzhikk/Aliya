@@ -2069,7 +2069,61 @@ body {
 }
 .story-grid { grid-template-columns: 1.15fr .85fr; }
 .feature-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.press-grid { grid-template-columns: 1fr 1fr; }
+.press-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+.press-grid > .landing-card {
+  align-self: start;
+}
+.press-grid > .landing-card:nth-child(1) { order: 1; }
+.press-grid > .landing-card:nth-child(5) { order: 2; }
+.press-grid > .landing-card:nth-child(6) { order: 3; grid-column: 1 / -1; }
+.press-grid > .landing-card:nth-child(2) { order: 4; grid-column: 1 / -1; }
+.press-grid > .landing-card:nth-child(3) { order: 5; grid-column: 1 / -1; }
+.press-grid > .landing-card:nth-child(4) { order: 6; grid-column: 1 / -1; }
+.press-grid > .landing-card:nth-child(2) .achievement-gallery,
+.press-grid > .landing-card:nth-child(3) .achievement-gallery,
+.press-grid > .landing-card:nth-child(4) .achievement-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.press-grid > .landing-card:nth-child(4) .achievement-gallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.press-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+  align-items: start;
+}
+.award-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  gap: 18px;
+  align-items: start;
+  margin-top: 18px;
+}
+.award-showcase.reverse {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+}
+.award-intro {
+  position: sticky;
+  top: 108px;
+}
+.award-intro .section-label { margin-bottom: 10px; }
+.award-intro h3 {
+  color: #12372F;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+.award-intro p {
+  margin-top: 14px;
+  color: #4A5E58;
+  font-size: 15px;
+  line-height: 1.7;
+}
 .timeline-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .media-grid { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
 .landing-card,
@@ -2764,6 +2818,9 @@ body {
   .landing-hero,
   .story-grid,
   .press-grid,
+  .press-summary-grid,
+  .award-showcase,
+  .award-showcase.reverse,
   .timeline-grid,
   .media-grid,
   .insta-card,
@@ -2782,6 +2839,7 @@ body {
   .audience-grid { grid-template-columns: 1fr 1fr; }
   .roadmap { grid-template-columns: 1fr 1fr; }
   .hero-visual { min-height: 360px; }
+  .award-intro { position: static; }
   .price-ticket { right: 14px; }
 }
 @media (max-width: 640px) {
@@ -2821,6 +2879,11 @@ body {
   .form-grid,
   .achievement-gallery,
   .award-metrics { grid-template-columns: 1fr; }
+  .press-grid > .landing-card:nth-child(2) .achievement-gallery,
+  .press-grid > .landing-card:nth-child(3) .achievement-gallery,
+  .press-grid > .landing-card:nth-child(4) .achievement-gallery {
+    grid-template-columns: 1fr;
+  }
   .form-field.full { grid-column: auto; }
   .mission-panel { padding: 24px; }
   .mission-stat strong { font-size: 38px; }
