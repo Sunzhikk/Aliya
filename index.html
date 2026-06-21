@@ -2135,67 +2135,45 @@ body {
   line-height: 1.65;
   font-size: 14.5px;
 }
-.technovation-visual {
-  display: block;
-  min-height: 260px;
+.achievement-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   margin-top: 16px;
+}
+.achievement-photo {
+  display: block;
   border-radius: 8px;
   overflow: hidden;
-  text-decoration: none;
-  background: #FFFFFF;
+  background: #F8EEE8;
   border: 1px solid rgba(31,144,112,.14);
+  text-decoration: none;
+  color: inherit;
   box-shadow: 0 12px 30px rgba(18,55,47,.08);
 }
-.tech-ribbon {
-  height: 76px;
-  background: #0878C9;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: 850;
+.achievement-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
 }
-.tech-winner {
-  padding: 22px 18px 10px;
-  color: #31B950;
-  font-size: clamp(34px, 4vw, 46px);
-  line-height: .9;
-  font-weight: 950;
-  text-transform: uppercase;
-  text-shadow: 0 4px 0 rgba(49,185,80,.14);
+.achievement-photo.document img {
+  object-fit: contain;
+  background: #fff;
 }
-.tech-photo-strip {
-  margin: 8px 18px 0;
-  min-height: 92px;
-  border-radius: 8px;
-  background:
-    linear-gradient(90deg, rgba(31,144,112,.9), rgba(255,112,101,.84)),
-    #EAF7F2;
-  display: grid;
-  grid-template-columns: repeat(14, 1fr);
-  gap: 4px;
-  align-items: end;
-  padding: 14px 12px;
+.achievement-photo.portrait img { aspect-ratio: 3 / 4; }
+.achievement-caption {
+  padding: 10px 11px 12px;
+  color: #4A5E58;
+  font-size: 12.5px;
+  line-height: 1.45;
+  font-weight: 700;
 }
-.tech-person {
-  height: 34px;
-  border-radius: 999px 999px 10px 10px;
-  background: rgba(255,255,255,.86);
-  box-shadow: 0 -10px 0 rgba(255,255,255,.22);
-}
-.tech-person:nth-child(3n) { height: 48px; }
-.tech-person:nth-child(4n) { height: 42px; }
-.tech-footer {
-  margin: 12px 18px 18px;
-  padding: 8px 12px;
-  border-radius: 6px;
-  background: #31B950;
-  color: #fff;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 900;
-  text-transform: uppercase;
+.achievement-caption strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #12372F;
+  font-size: 13.5px;
 }
 .feature-icon {
   width: 38px;
@@ -2715,7 +2693,8 @@ body {
   .feature-grid { grid-template-columns: 1fr; }
   .audience-grid,
   .roadmap,
-  .form-grid { grid-template-columns: 1fr; }
+  .form-grid,
+  .achievement-gallery { grid-template-columns: 1fr; }
   .form-field.full { grid-column: auto; }
   .mission-panel { padding: 24px; }
   .mission-stat strong { font-size: 38px; }
@@ -3073,29 +3052,30 @@ body {
         </div>
         <div class="landing-card">
           <div class="card-title">Technovation Challenge</div>
-          <p class="card-copy">Команда Qushaq вошла в число победителей регионального этапа Technovation Challenge. Для Алии этот конкурс стал моментом, когда идея начала превращаться в реальный продукт: там она училась защищать проект, принимать обратную связь и дорабатывать решение.</p>
-          <a class="technovation-visual" href="https://www.instagram.com/p/DJrGJONoODF/?img_index=1" target="_blank" rel="noopener" aria-label="Открыть пост Technovation Girls Kazakhstan">
-            <div class="tech-ribbon">Алматы</div>
-            <div class="tech-winner">Winner<br>Winner<br>Winner</div>
-            <div class="tech-photo-strip" aria-hidden="true">
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
-              <span class="tech-person"></span>
+          <p class="card-copy">В сезоне 2024-2025 команда AiQushaqy получила статус Regional Pitch Event Winner в Junior Division и прошла в semifinal stage с проектом Qushaq. В сезоне 2025-2026 проект получил образовательный грант от InVision U и награду за самый трогательный проект от KAU School.</p>
+          <div class="achievement-gallery">
+            <a class="achievement-photo document" href="https://www.instagram.com/p/DJrGJONoODF/?img_index=1" target="_blank" rel="noopener">
+              <img src="assets/technovation-2025-winner-certificate.jpeg" alt="Сертификат Regional Pitch Event Winner 2024-2025">
+              <div class="achievement-caption"><strong>2024-2025</strong>Regional Pitch Event Winner, Junior Division</div>
+            </a>
+            <div class="achievement-photo document">
+              <img src="assets/technovation-2025-semifinalist-certificate.jpeg" alt="Сертификат Semifinalist 2025">
+              <div class="achievement-caption"><strong>2024-2025</strong>Semifinalist Certificate of Recognition</div>
             </div>
-            <div class="tech-footer">Regional Pitch Event 2025</div>
-          </a>
-          <p class="card-copy"><a href="https://www.instagram.com/p/DJrGJONoODF/?img_index=1" target="_blank" rel="noopener">Открыть пост Technovation</a></p>
+            <div class="achievement-photo portrait">
+              <img src="assets/technovation-2025-team-photo.jpeg" alt="Команда AiQushaqy на Technovation Girls Kazakhstan 2025">
+              <div class="achievement-caption"><strong>Команда</strong>AiQushaqy на региональном событии 2025</div>
+            </div>
+            <div class="achievement-photo portrait">
+              <img src="assets/technovation-2026-team-photo.jpeg" alt="Команда Qushaq на Technovation Girls Kazakhstan Celebration 2026">
+              <div class="achievement-caption"><strong>2025-2026</strong>Celebration 2026, грант InVision U</div>
+            </div>
+            <div class="achievement-photo document">
+              <img src="assets/technovation-2026-invision-certificate.jpeg" alt="Сертификат InVision U Educational Award 2026">
+              <div class="achievement-caption"><strong>2025-2026</strong>Educational Award от InVision U</div>
+            </div>
+          </div>
+          <p class="card-copy"><a href="https://www.instagram.com/p/DJrGJONoODF/?img_index=1" target="_blank" rel="noopener">Открыть пост Technovation 2025</a></p>
         </div>
         <div class="landing-card">
           <div class="card-title">Планы развития</div>
